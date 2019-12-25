@@ -5,9 +5,9 @@
 def calculate_PWM(angle):
     pwm= 500.0 + (((2500.0-500.0)/(180-0))*(angle-0))
     return pwm
-filename = str(input("Enter the file Name: "))
-filename = filename + ".txt";
-f=open(filename);
+#filename = str(input("Enter the file Name: "))
+#filename = filename + ".txt";
+f=open("angles_slip.txt");
 newfilename = str(input("Enter output file Name : "))
 newfilename = newfilename + ".sc3"
 f2=open(newfilename,'w');

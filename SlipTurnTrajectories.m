@@ -1,9 +1,9 @@
 T = 1; %Time Period
 K = 32.5; %Half Pelvis Distance
 L = 50; % Length of the step
-Py = 20;
-Px = 50;
-lx = 120;
+Py = 50 ;
+Px = 47;
+lx = 124;
 ly = 77;
 H = 20; %Foot Height
 Zo = 210;
