@@ -1,5 +1,5 @@
-T = importdata('angles_generated.txt'); 
-t=0:1:19;
+T = importdata('Smooth_Turn.txt'); 
+t=0:1:21;
 t1 = T(:,1);
 t2 = T(:,2);
 t3 = T(:,3);

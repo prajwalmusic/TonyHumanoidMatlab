@@ -1,6 +1,6 @@
 T = 1; %Time Period
 K = 32.5; %Half Pelvis Distance
-L = 47; % Length of the step
+L = 50; % Length of the step
 Py = 25;
 Px = 50;
 lx = 120;
@@ -8,7 +8,7 @@ ly = 77;
 H = 20; %Foot Height
 Zo = 210;
 t=0;
-InterStepSize = 1;
+InterStepSize = 25;
 N = Py/InterStepSize;
 fileID = fopen('angles_slip.txt','w');
 xr1 = K;
@@ -17,7 +17,7 @@ zr1 = 210;
 xl1 = -K;
 yl1 = 0;
 zl1 = 210;
-while(t<T)
+while(t<=T)
     if (t == 0)
     xrf = K;
     yrf = L/2;
