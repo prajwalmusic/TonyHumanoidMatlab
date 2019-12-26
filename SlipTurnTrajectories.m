@@ -1,14 +1,14 @@
 T = 1; %Time Period
 K = 32.5; %Half Pelvis Distance
-L = 50; % Length of the step
-Py = 20;
+L = 47; % Length of the step
+Py = 25;
 Px = 50;
 lx = 120;
 ly = 77;
 H = 20; %Foot Height
 Zo = 210;
 t=0;
-InterStepSize = 5;
+InterStepSize = 1;
 N = Py/InterStepSize;
 fileID = fopen('angles_slip.txt','w');
 xr1 = K;
