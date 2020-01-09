@@ -22,20 +22,20 @@ while(t<=T)
     xrf = K;
     yrf = L/2;
     zrf = 0;
-    [te1,te2,te3,te4,te5] = TonyIK(xrf,yrf,zrf,xr1,yr1,zr1);
+    [te1,te2,te3,te4,te5] = TonyIK(xrf,yrf,zrf,xr1,yr1,zr1,'r');
     xlf = -K;
     ylf = -L/2;
     zlf = 0;
-    [te6,te7,te8,te9,te10] = TonyIK(xlf,ylf,zlf,xl1,yl1,zl1);
+    [te6,te7,te8,te9,te10] = TonyIK(xlf,ylf,zlf,xl1,yl1,zl1,'l');
     else 
             xrf = K;
             yrf = L/2-(InterStepSize * t * N/T);
             zrf = 0;
-            [te1,te2,te3,te4,te5] = TonyIK(xrf,yrf,zrf,xr1,yr1,zr1);
+            [te1,te2,te3,te4,te5] = TonyIK(xrf,yrf,zrf,xr1,yr1,zr1,'r');
             xlf = -K;
             ylf = -(L/2-(InterStepSize * t * N/T));
             zlf = 0;
-            [te6,te7,te8,te9,te10] = TonyIK(xlf,ylf,zlf,xl1,yl1,zl1);
+            [te6,te7,te8,te9,te10] = TonyIK(xlf,ylf,zlf,xl1,yl1,zl1,'l');
     end
     t = t+(T/N);
     thetas = [te1,te2,te3,te4,te5,te6,te7,te8,te9,te10];

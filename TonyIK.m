@@ -8,7 +8,7 @@
 %%% Integration 2020
 %%% Authors: Prasanna Venkatesan K S and Prajwal Rajendra Mahendrakar
 
-function [te1,te2,te3,te4,te5] = TonyIK(xf,yf,zf,x1,y1,z1)
+function [te1,te2,te3,te4,te5] = TonyIK(xf,yf,zf,x1,y1,z1,leg)
 %Robot Parameters[45,65,65,50,17]
 l1 =45;
 l2 =65;
@@ -75,8 +75,16 @@ slope = (z1 - z5)/(x1 - x5);
     y3 = sol(2);
     z3 = sol(3);
    
-end
-    
+ end
+ if(leg == 'r')
+    fprintf(" xr1 = %f; yr1 = %f; zr1 = %f;  xr2 = %f; yr2 = %f; zr2 = %f;\n", x1,y1,z1,x2,y2,z2);
+    fprintf(" xr3 = %f; yr3 = %f; zr3 = %f;  xr4 = %f; yr4 = %f; zr4 = %f;\n", x3,y3,z3,x4,y4,z4);
+    fprintf(" xr5 = %f; yr5 = %f; zr5 = %f;  xrf = %f; yrf = %f; zrf = %f;\n", x5,y5,z5,xf,yf,zf);
+ else
+    fprintf(" xl1 = %f; yl1 = %f; zl1 = %f;  xl2 = %f; yl2 = %f; zl2 = %f;\n", x1,y1,z1,x2,y2,z2);
+    fprintf(" xl3 = %f; yl3 = %f; zl3 = %f;  xl4 = %f; yl4 = %f; zl4 = %f;\n", x3,y3,z3,x4,y4,z4);
+    fprintf(" xl5 = %f; yl5 = %f; zl5 = %f;  xlf = %f; ylf = %f; zlf = %f;\n", x5,y5,z5,xf,yf,zf);
+ end
     te2 = abs(atan((y3-y2)/(z2-z3)));
     te4 = abs(atan2((y3-y4),(z3-z4)));
     te3 = -(abs(te2)+abs(te4));
