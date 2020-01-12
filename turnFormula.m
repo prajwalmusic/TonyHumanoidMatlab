@@ -1,11 +1,11 @@
-Py = 1:25;
-Px = 47;
-lx = 120;
+XB = [5,10,15,20,25];
+YB = [43,43,43,43,43];
+t = [0.5 0.5 0.5 0.5 0.5];
+lx =120;
 ly = 77;
-for i = 1:25
-tant(i) = (3*Px*Py(i))/(lx^2+ly^2+(3*(Py(i)^2)));
-theta(i) = atanh(tant(i));
+for i =1:5
+    omega(i) = (-12 * YB(i) * (XB(i)/t(i)))/((12 * (XB(i)^2 + YB(i)^2))+ lx^2 + ly^2);
+    theta(i) = omega(i) * t(i) * 180 /pi ;
 end
-t = 1:25;
-theta = theta .* (180/pi);
-plot(theta,t);
+disp(theta)
+plot(XB, theta);

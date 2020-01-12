@@ -9,7 +9,7 @@ def calculate_PWM(angle):
     return pwm
 #filename = str(input("Enter the file Name: "))
 #filename = filename + ".txt";
-f=open("angles_generated.txt");
+f=open("angles_generated.txt")
 #newfilename = str(input("Enter output file Name : "))
 newfilename = "TEMP" + ".txt"
 f2=open(newfilename,'w');
@@ -47,14 +47,17 @@ f.close()
 #######################
 ser = serial.Serial("COM4",115200);
 toWait = 1
-speed = int(input("Speed of the Servos?? : "))
-speedString = "P=" + ((str(speed)))+"\n"
+#speed = int(input("Speed of the Servos?? : "))
+num=6
+line = ser.readline()
+print(line)
+speedString = "P=100\n"
 print(speedString)
 ser.write(speedString.encode('utf-8'))
-num=2
 while(num>=0):
     f2 = open(newfilename)
     toBeSent = f2.readlines()
+    #toBeSent.reverse()
     c = ser.read()
     for line in toBeSent:
         ser.write(line.encode('utf-8'))
@@ -64,7 +67,8 @@ while(num>=0):
             if c == b'i':
                 break;
         while(toWait != 0):
-            toWait = int(input("Press Zero to Continue Sending" ))
+            toWait = input("Press any key to Continue Sending" )
+            toWait =0
     num=num-1
     f2.close()
 ser.close
